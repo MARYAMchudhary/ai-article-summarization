@@ -17,7 +17,12 @@
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  /* background: radial-gradient(
+    circle,
+    rgb(1 255 255 / 47%) 0,
+    hsl(202.13deg 96.12% 56.09%) 100%
+  ); */
+  /* background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%); */
   position: absolute;
   content: "";
   z-index: 2;
@@ -28,14 +33,17 @@
 
 .main:after {
   content: "";
-  background-image: url("/src/assets/grid.svg");
+  background-image: url("/src/assets/second.jpg");
+  /* background-image: url("/src/assets/grid.svg"); */
   z-index: 1;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  opacity: 0.4;
-  filter: invert(1);
+  opacity: 0.8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter: invert(1); */
 }
 
 .gradient {
@@ -80,15 +88,15 @@
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center;
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-white sm:text-6xl text-center;
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#d87cff] via-orange-600 to-[#b9ffd4] bg-clip-text text-transparent;
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl text-center max-w-2xl;
+  @apply mt-5 text-lg text-gray-200 sm:text-xl text-center max-w-2xl;
 }
 
 .url_input {
@@ -106,11 +114,21 @@
 .copy_btn {
   @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
 }
+.logo_style {
+  width: 21%;
+  margin-top: -2rem;
+  margin-left: -3rem;
+  object-fit: contain;
+}
+.logo_div {
+  width: 88%;
+  height: 100px;
+}
 
 .blue_gradient {
-  @apply font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  @apply font-black bg-gradient-to-r from-[#fa3d9c] to-[#0dffcf] bg-clip-text text-transparent;
 }
 
 .summary_box {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4;
+  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4 text-white;
 }

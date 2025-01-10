@@ -1,12 +1,15 @@
 import React from "react";
 
-import { logo } from "../assets";
+import { Artical } from "../assets";
 
 const Hero = () => {
   return (
     <header className='w-full flex justify-center items-center flex-col'>
       <nav className='flex justify-between items-center w-full mb-10 pt-3'>
-        <img src={logo} alt='sumz_logo' className='w-28 object-contain' />
+        <div className="logo_div">
+
+        <img src={Artical} alt='sumz_logo' className='logo_style' />
+        </div>
 
         <button
           type='button'

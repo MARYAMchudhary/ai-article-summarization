@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { copy, linkIcon, loader, tick } from "../assets";
+import { copy, linkIcon, loader, tick,images } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
 
 const Demo = () => {
@@ -16,6 +16,7 @@ const Demo = () => {
 
   // Load data from localStorage on mount
   useEffect(() => {
+
     const articlesFromLocalStorage = JSON.parse(
       localStorage.getItem("articles")
     );
@@ -51,6 +52,11 @@ const Demo = () => {
     setCopied(copyUrl);
     navigator.clipboard.writeText(copyUrl);
     setTimeout(() => setCopied(false), 3000);
+  };
+  const handleDelete = (indexToDelete) => {
+    const updatedArticles = allArticles.filter((_, index) => index !== indexToDelete);
+    setAllArticles(updatedArticles);
+    localStorage.setItem("articles", JSON.stringify(updatedArticles));
   };
 
   const handleKeyDown = (e) => {
@@ -108,6 +114,20 @@ const Demo = () => {
               <p className='flex-1 font-satoshi text-blue-700 font-medium text-sm truncate'>
                 {item.url}
               </p>
+              {/* add delete icon here  */}
+              <div
+                className="delete_btn ml-2 cursor-pointer flex justify-end"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent triggering setArticle
+                  handleDelete(index);
+                }}
+              >
+                <img
+                  src={images}
+                  alt="delete_icon"
+                  className="w-[10%] h-[10%] object-contain"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -128,11 +148,11 @@ const Demo = () => {
         ) : (
           article.summary && (
             <div className='flex flex-col gap-3'>
-              <h2 className='font-satoshi font-bold text-gray-600 text-xl'>
+              <h2 className='font-satoshi font-bold text-gray-200 text-xl'>
                 Article <span className='blue_gradient'>Summary</span>
               </h2>
-              <div className='summary_box'>
-                <p className='font-inter font-medium text-sm text-gray-700'>
+              <div className='summary_box text-white'>
+                <p className='font-inter font-medium text-sm text-gray-100'>
                   {article.summary}
                 </p>
               </div>
