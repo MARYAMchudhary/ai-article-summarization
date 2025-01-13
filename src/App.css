@@ -87,7 +87,7 @@
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
 } */
 .black_btn {
-  @apply rounded-full border border-black bg-gradient-to-r from-[#a1b9df] via-[#3088f6] to-[#905cff] py-1.5 px-5 text-sm text-white transition-all hover:bg-gradient-to-r hover:from-white hover:via-gray-300 hover:to-white hover:text-black;
+  @apply rounded-full border border-gray-50 bg-gradient-to-r from-[#a1b9df] via-[#3088f6] to-[#905cff] py-1.5 px-5 text-sm text-white transition-all hover:bg-gradient-to-r hover:from-white hover:via-gray-300 hover:to-white hover:text-black;
 }
 
 .head_text {
