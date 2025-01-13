@@ -33,17 +33,17 @@
 
 .main:after {
   content: "";
-  background-image: url("/src/assets/second.jpg");
+  background-image: url("/src/assets/first.jpg");
   /* background-image: url("/src/assets/grid.svg"); */
   z-index: 1;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   background-size: cover;
   background-repeat: no-repeat;
-  /* filter: invert(1); */
+  filter: blur(3px);
 }
 
 .gradient {
@@ -80,11 +80,14 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-8 px-3;
 }
 
-.black_btn {
+/* .black_btn {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
+} */
+.black_btn {
+  @apply rounded-full border border-black bg-gradient-to-r from-[#a1b9df] via-[#3088f6] to-[#905cff] py-1.5 px-5 text-sm text-white transition-all hover:bg-gradient-to-r hover:from-white hover:via-gray-300 hover:to-white hover:text-black;
 }
 
 .head_text {
