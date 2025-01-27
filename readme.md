@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://youtu.be/vpvtZZi5ZWk?feature=shared" target="_blank">
-      <img src="https://github.com/MARYAMchudhary/ai-article-summarization/tree/main/src/assets/Home.jpeg" alt="Project Banner">
+      <img src="/src/assets/Home.jpeg" alt="Project Banner">
     </a>
   <br />
 
